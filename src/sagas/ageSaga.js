@@ -19,11 +19,11 @@ function* ageDownAsync() {
   yield put({ type: "AGE_DOWN_ASYNC", value: 1 });
 }
 
-function* root() {
+function* rootAge() {
   yield all([
     fork(watchAgeUp), // saga1 can also yield [ fork(actionOne), fork(actionTwo) ]
     fork(watchAgeDown),
 ]);
 }
 
-export default root;
+export default rootAge;
