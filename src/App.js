@@ -6,6 +6,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+      <h1 className='App-title'>Welcome to React</h1>
         <div className="Age-label">
           your age: <span>{this.props.age}</span>
         </div>
