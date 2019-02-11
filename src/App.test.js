@@ -20,7 +20,13 @@ describe('App component testing', function() {
   it('renders button', function() {
     const wrapper = mount(<App store={mockStore({ runtime: {} })} />); 
     // const welcome = <h1 className='App-title'>Welcome to React</h1>;
-    console.log(wrapper);
+    // console.log(wrapper);
     expect(wrapper.find('button').length).to.equal(2);
+  });
+  it('should have props', function() {
+    const wrapper = mount(<App store={mockStore({ runtime: {} })} />); 
+    // const welcome = <h1 className='App-title'>Welcome to React</h1>;
+    console.log(wrapper.instance().props);
+    // expect(wrapper.find('button').length).to.equal(2);
   });
 });

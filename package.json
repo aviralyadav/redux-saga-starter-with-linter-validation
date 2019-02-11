@@ -20,7 +20,11 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "test": "react-scripts test --env=jsdom --watch",
+    "test:coverage": "nyc --reporter=text npm run test",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "nyc": "^13.2.0"
   }
 }
