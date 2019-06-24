@@ -1,8 +1,9 @@
 // import { delay } from 'redux-saga';
-import { takeLatest, put, delay, fork, all } from "redux-saga/effects";
+import { takeLatest, put, delay, fork, all, call } from "redux-saga/effects";
+import {addTodo, ageDown, ageUp, receiveUsers} from '../store/actions';
 
 function* ageUPAsync() {
-  yield delay(3000);
+  // yield delay(3000);
   yield put({ type: "AGE_UP_ASYNC", value: 1 });
 }
 
@@ -19,10 +20,26 @@ function* ageDownAsync() {
   yield put({ type: "AGE_DOWN_ASYNC", value: 1 });
 }
 
+export function fetchPostsApi() {
+  return fetch(`https://jsonplaceholder.typicode.com/users`)
+  .then(response => response.json())
+  .then(json => json);
+}
+
+function* getUsers() {
+  const users = yield call(fetchPostsApi)
+  yield put(receiveUsers(users))
+}
+
+function* watchFetchUsers() {
+  yield takeLatest('GET_USERS', getUsers) //
+}
+
 function* rootAge() {
   yield all([
     fork(watchAgeUp), // saga1 can also yield [ fork(actionOne), fork(actionTwo) ]
     fork(watchAgeDown),
+    fork(watchFetchUsers),
 ]);
 }
 
