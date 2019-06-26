@@ -1,5 +1,5 @@
 import { takeLatest, put, delay, fork, all, call } from "redux-saga/effects";
-import {receiveUsers, addUser} from '../store/actions';
+import {receiveUsers, addUser,receiveUsersFailed} from '../store/actions';
 
 // function addUserCall() {
 //   return axios({
@@ -21,8 +21,13 @@ function getUsersFunction() {
 }
 
 function* getUsers() {
-  const usersList = yield call(getUsersFunction);
-  yield put(receiveUsers(usersList));
+  try {
+    const usersList = yield call(getUsersFunction);
+    yield put(receiveUsers(usersList));
+  } catch(err) {
+    yield put(receiveUsersFailed())
+  }
+  
 }
 
 function* watcherUserAction() {     //// watching for actions which are going to store

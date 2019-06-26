@@ -30,6 +30,12 @@ export function receiveUsers(users) {
   }
 }
 
+export function receiveUsersFailed() {
+  return {
+    type: 'RECEIVE_USERS_FAILED'
+  }
+}
+
 export function addUser(user) {
   return {
     type: 'ADD_USER',

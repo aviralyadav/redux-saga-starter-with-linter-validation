@@ -115,7 +115,8 @@ function UserAddForm(props) {
 const mapStateToProps = state => {
     return {
         users: state.users,
-        loading: state.loading
+        loading: state.loading,
+        error: state.error
     }
 };
 
