@@ -1,7 +1,18 @@
 import React, { Component } from "react";
 import "./App.css";
 import { connect } from "react-redux";
-import {addTodo, ageDown, ageUp, getUsers} from './store/actions';
+import {ageDown, ageUp, getUsers} from './store/actions';
+import { makeStyles } from '@material-ui/core/styles';
+import Paper from '@material-ui/core/Paper';
+import Typography from '@material-ui/core/Typography';
+import Users from './components/users/Users';
+import UserAddForm from './components/users/UserAddForm';
+
+const classes = {
+  root: {
+    padding: 20,
+  },
+}
 
 class App extends Component {
   ageUp = () => {
@@ -15,15 +26,22 @@ class App extends Component {
   }
   render() {
     console.log(this.props);
+    // const classes = useStyles();
     return (
       <div className="App">
-      <h1 className='App-title'>Welcome to React</h1>
+        <Paper style={classes.root}>
+        <Typography variant="h5" component="h3">
+        Welcome to React
+        </Typography>
         <div className="Age-label">
           your age: <span>{this.props.age}</span>
         </div>
         <button onClick={this.ageUp}>Age UP</button>
         <button onClick={this.props.onAgeDown}>Age Down</button>
         {/* <button onClick={this.handleText}>Save Text</button> */}
+        </Paper>
+        <Users userData={this.props.users} />
+        <UserAddForm />
       </div>
     );
   }
