@@ -36,7 +36,6 @@ const useStyles = makeStyles(theme => ({
 }));
 
 function UserAddForm(props) {
-    console.log(props)
   const classes = useStyles();
   const [values, setValues] = React.useState({
     id: Math.random(),
@@ -54,7 +53,7 @@ function UserAddForm(props) {
   const handleSubmit = e => {
       e.preventDefault();
       props.submitUser(values);
-      console.log(values);
+      
   }
 
   return (

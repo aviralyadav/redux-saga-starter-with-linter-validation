@@ -20,23 +20,7 @@ function* ageDownAsync() {
   yield put({ type: "AGE_DOWN_ASYNC", value: 1 });
 }
 
-export function fetchPostsApi() {
-  return fetch(`https://jsonplaceholder.typicode.com/users`)
-  .then(response => response.json())
-  .then(json => json);
-}
-
-function* getUsers() {
-  const users = yield call(fetchPostsApi)
-  yield put(receiveUsers(users))
-}
-
-// function* watchFetchUsers() {
-//   yield takeLatest('GET_USERS', getUsers) //
-// }
-
 function* watcher() {
-  yield takeLatest('GET_USERS', getUsers);
   yield takeLatest('AGE_UP', ageUPAsync);
   yield takeLatest('AGE_DOWN', ageDownAsync);
 }

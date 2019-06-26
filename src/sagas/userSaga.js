@@ -14,8 +14,20 @@ function* addNewUser({user}) {
     yield put(addUser(user));
 }
 
+function getUsersFunction() {
+  return fetch(`https://jsonplaceholder.typicode.com/users`)
+  .then(response => response.json())
+  .then(json => json);
+}
+
+function* getUsers() {
+  const usersList = yield call(getUsersFunction);
+  yield put(receiveUsers(usersList));
+}
+
 function* watcherUserAction() {     //// watching for actions which are going to store
     yield takeLatest('ADD_USER_START', addNewUser);
+    yield takeLatest('GET_USERS', getUsers);
 }
 
 function* rootUser() {

@@ -245,8 +245,9 @@ const reducer = (state=initialState, action) => {
         case 'AGE_DOWN_ASYNC': 
             newState.age -= action.value;
             break;
+        case 'GET_USERS': return {...state, loading: true};
         case 'RECEIVE_USERS': 
-        return {...state, users: action.users}; 
+        return {...state, users: action.users, loading: false}; 
         case 'ADD_USER_START': return {...state, loading: true };
         case 'ADD_USER': return {...state, users: state.users.concat(action.user), loading: false};
         default: return newState;
