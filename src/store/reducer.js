@@ -249,7 +249,7 @@ const reducer = (state=initialState, action) => {
         case 'GET_USERS': return {...state, loading: true};
         case 'RECEIVE_USERS': 
         return {...state, users: action.users, loading: false}; 
-        case 'RECEIVE_USERS_FAILED': return {...state, loading: false, error: 'Users fetch failed' }
+        case 'RECEIVE_USERS_FAILED': return {...state, loading: false, error: 'Users fetch failed' };
         case 'ADD_USER_START': return {...state, loading: true };
         case 'ADD_USER': return {...state, users: state.users.concat(action.user), loading: false};
         default: return newState;

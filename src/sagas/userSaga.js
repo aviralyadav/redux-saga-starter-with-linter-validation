@@ -1,4 +1,4 @@
-import { takeLatest, put, delay, fork, all, call } from "redux-saga/effects";
+import { takeLatest, put, fork, all, call } from "redux-saga/effects";
 import {receiveUsers, addUser,receiveUsersFailed} from '../store/actions';
 
 // function addUserCall() {
@@ -25,7 +25,7 @@ function* getUsers() {
     const usersList = yield call(getUsersFunction);
     yield put(receiveUsers(usersList));
   } catch(err) {
-    yield put(receiveUsersFailed())
+    yield put(receiveUsersFailed());
   }
   
 }

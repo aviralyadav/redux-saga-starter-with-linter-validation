@@ -6,7 +6,7 @@ function* root(){
     yield all([
         fork(ageSaga),
         fork(userSaga)
-    ])
+    ]);
 }
 
 export default root;

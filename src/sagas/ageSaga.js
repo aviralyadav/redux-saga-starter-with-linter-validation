@@ -1,6 +1,6 @@
 // import { delay } from 'redux-saga';
-import { takeLatest, put, delay, fork, all, call } from "redux-saga/effects";
-import {receiveUsers} from '../store/actions';
+import { takeLatest, put, delay, fork, all } from "redux-saga/effects";
+// import {receiveUsers} from '../store/actions';
 
 function* ageUPAsync() {
   // yield delay(3000);

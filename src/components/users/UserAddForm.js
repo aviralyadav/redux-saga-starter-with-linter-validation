@@ -1,7 +1,7 @@
 import React from "react";
-import clsx from "clsx";
+// import clsx from "clsx";
 import { makeStyles } from "@material-ui/core/styles";
-import MenuItem from "@material-ui/core/MenuItem";
+// import MenuItem from "@material-ui/core/MenuItem";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import Paper from "@material-ui/core/Paper";
@@ -52,9 +52,10 @@ function UserAddForm(props) {
 
   const handleSubmit = e => {
       e.preventDefault();
+      // eslint-disable-next-line react/prop-types
       props.submitUser(values);
       
-  }
+  };
 
   return (
     <Paper className={classes.root}>
@@ -110,20 +111,20 @@ function UserAddForm(props) {
       </form>
     </Paper>
   );
-};
+}
 
 const mapStateToProps = state => {
     return {
         users: state.users,
         loading: state.loading,
         error: state.error
-    }
+    };
 };
 
 const mapDispatchToProps = dispatch => {
     return {
         submitUser: (userData) => dispatch({type: 'ADD_USER_START', user: userData})
-    }
+    };
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserAddForm);
