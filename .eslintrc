@@ -20,7 +20,9 @@
         "no-unused-vars": "warn",
         "no-console": 1,
         "no-unexpected-multiline": "warn",
-        "semi":"error"
+        "semi":"error",
+        "block-spacing": ["error", "always"],
+        "camelcase": ["error", {"properties": "never"}]
     },
     "settings": {
         "react": {
