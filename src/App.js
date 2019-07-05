@@ -8,12 +8,202 @@ import Typography from "@material-ui/core/Typography";
 import Users from "./components/users/Users";
 import UserAddForm from "./components/users/UserAddForm";
 import PropTypes from "prop-types";
+import ExpansionPanelDemo from "./components/demos/ExpansionPanelDemo";
 
 const classes = {
   root: {
     padding: 20
   }
 };
+
+const dataArr = [
+  {
+    id: "8d57368d-a416-4377-be5d-57aeac70ace5",
+    compartmentId: "bf127443-7e80-4cbf-a33f-d69d1c785829",
+    name: "Manage Campaign",
+    customName: "metadata",
+    description: "create, view & edit campaign",
+    image: "",
+    isRoot: true,
+    type: "card",
+    docType: "create",
+    approvalLevel: 5,
+    children: [
+      {
+        id: "8d57368d-a416-4377-be5d-57aeac70ace5",
+        compartmentId: "bf127443-7e80-4cbf-a33f-d69d1c781229",
+        name: "Manage Campaign Child",
+        customName: "metadata",
+        description: "create, view & edit campaign",
+        image: "",
+        isRoot: true,
+        type: "card",
+        docType: "create",
+        approvalLevel: 5,
+        children: [],
+        _rid: "iDEoANp+UAsBAAAAAAAAAA==",
+        _self: "dbs/iDEoAA==/colls/iDEoANp+UAs=/docs/iDEoANp+UAsBAAAAAAAAAA==/",
+        _etag: '"0d00627f-0000-0100-0000-5d16292c0000"',
+        _attachments: "attachments/",
+        _ts: 1561733420
+      }
+    ],
+    _rid: "iDEoANp+UAsBAAAAAAAAAA==",
+    _self: "dbs/iDEoAA==/colls/iDEoANp+UAs=/docs/iDEoANp+UAsBAAAAAAAAAA==/",
+    _etag: '"0d00627f-0000-0100-0000-5d16292c0000"',
+    _attachments: "attachments/",
+    _ts: 1561733420
+  },
+  {
+    id: "8d57368d-a416-4377-be5d-57aeac70ace6",
+    compartmentId: "bf127443-7e80-4cbf-a33f-d69d1c785828",
+    name: "Manage Promotion",
+    customName: "tnc",
+    description: "create, view & edit promotion",
+    image: "",
+    isRoot: true,
+    type: "card",
+    docType: "create",
+    approvalLevel: 5,
+    children: [
+      {
+        id: "8d57368d-a416-4377-be5d-57aeac70ace6",
+        compartmentId: "bf127443-7e80-4cbf-a33f-d69d1c7858782",
+        name: "Manage Promotion Child",
+        customName: "tnc",
+        description: "create, view & edit promotion",
+        image: "",
+        isRoot: true,
+        type: "card",
+        docType: "create",
+        approvalLevel: 5,
+        children: [],
+        _rid: "iDEoANp+UAsBAAAAAAAAAA==",
+        _self: "dbs/iDEoAA==/colls/iDEoANp+UAs=/docs/iDEoANp+UAsBAAAAAAAAAA==/",
+        _etag: '"0d00627f-0000-0100-0000-5d16292c0000"',
+        _attachments: "attachments/",
+        _ts: 1561733420
+      }
+    ],
+    _rid: "iDEoANp+UAsBAAAAAAAAAA==",
+    _self: "dbs/iDEoAA==/colls/iDEoANp+UAs=/docs/iDEoANp+UAsBAAAAAAAAAA==/",
+    _etag: '"0d00627f-0000-0100-0000-5d16292c0000"',
+    _attachments: "attachments/",
+    _ts: 1561733420
+  },
+  {
+    id: "8d57368d-a416-4377-be5d-57aeac70ace6",
+    compartmentId: "bf127443-7e80-4cbf-a33f-d69d1c785827",
+    name: "Manage Coupon",
+    customName: "coupon",
+    description: "create, view & edit coupon",
+    image: "",
+    isRoot: true,
+    type: "card",
+    docType: "create",
+    approvalLevel: 5,
+    children: [
+      {
+        id: "8d57368d-a416-4377-be5d-57aeac70ace5",
+        compartmentId: "bf127443-7e80-4cbf-a33f-d69d1c785825",
+        name: "Manage Coupon Child",
+        customName: "metadata",
+        description: "create, view & edit campaign",
+        image: "",
+        isRoot: true,
+        type: "card",
+        docType: "create",
+        approvalLevel: 5,
+        children: ["8d57368d-a416-4377-be5d-57aeac70ace6"],
+        _rid: "iDEoANp+UAsBAAAAAAAAAA==",
+        _self: "dbs/iDEoAA==/colls/iDEoANp+UAs=/docs/iDEoANp+UAsBAAAAAAAAAA==/",
+        _etag: '"0d00627f-0000-0100-0000-5d16292c0000"',
+        _attachments: "attachments/",
+        _ts: 1561733420
+      }
+    ],
+    _rid: "iDEoANp+UAsBAAAAAAAAAA==",
+    _self: "dbs/iDEoAA==/colls/iDEoANp+UAs=/docs/iDEoANp+UAsBAAAAAAAAAA==/",
+    _etag: '"0d00627f-0000-0100-0000-5d16292c0000"',
+    _attachments: "attachments/",
+    _ts: 1561733420
+  },
+  {
+    id: "8d57368d-a416-4377-be5d-57aeac70ace6",
+    compartmentId: "bf127443-7e80-4cbf-a33f-d69d1c785825",
+    name: "Bulk Upload",
+    customName: "tnc",
+    description: "bulk upload",
+    image: "",
+    isRoot: true,
+    type: "card",
+    docType: "create",
+    approvalLevel: 5,
+    children: [
+      {
+        id: "8d57368d-a416-4377-be5d-57aeac70ace5",
+        compartmentId: "bf127443-7e80-4cbf-a33f-d69d1c785829",
+        name: "Bulk Upload Campaign Child",
+        customName: "metadata",
+        description: "create, view & edit campaign",
+        image: "",
+        isRoot: true,
+        type: "card",
+        docType: "create",
+        approvalLevel: 5,
+        children: ["8d57368d-a416-4377-be5d-57aeac70ace6"],
+        _rid: "iDEoANp+UAsBAAAAAAAAAA==",
+        _self: "dbs/iDEoAA==/colls/iDEoANp+UAs=/docs/iDEoANp+UAsBAAAAAAAAAA==/",
+        _etag: '"0d00627f-0000-0100-0000-5d16292c0000"',
+        _attachments: "attachments/",
+        _ts: 1561733420
+      }
+    ],
+    _rid: "iDEoANp+UAsBAAAAAAAAAA==",
+    _self: "dbs/iDEoAA==/colls/iDEoANp+UAs=/docs/iDEoANp+UAsBAAAAAAAAAA==/",
+    _etag: '"0d00627f-0000-0100-0000-5d16292c0000"',
+    _attachments: "attachments/",
+    _ts: 1561733420
+  },
+  {
+    id: "8d57368d-a416-4377-be5d-57aeac70ace6",
+    compartmentId: "bf127443-7e80-4cbf-a33f-d69d1c785830",
+    name: "Trigger offers",
+    customName: "tnc",
+    description: "triggering offers",
+    image: "",
+    isRoot: true,
+    type: "card",
+    docType: "create",
+    approvalLevel: 5,
+    children: [
+      {
+        id: "8d57368d-a416-4377-be5d-57aeac70ace5",
+        compartmentId: "bf127443-7e80-4cbf-a33f-d69d1c785829",
+        name: "Trigger offers Child",
+        customName: "metadata",
+        description: "create, view & edit campaign",
+        image: "",
+        isRoot: true,
+        type: "card",
+        docType: "create",
+        approvalLevel: 5,
+        children: ["8d57368d-a416-4377-be5d-57aeac70ace6"],
+        _rid: "iDEoANp+UAsBAAAAAAAAAA==",
+        _self: "dbs/iDEoAA==/colls/iDEoANp+UAs=/docs/iDEoANp+UAsBAAAAAAAAAA==/",
+        _etag: '"0d00627f-0000-0100-0000-5d16292c0000"',
+        _attachments: "attachments/",
+        _ts: 1561733420
+      }
+    ],
+    _rid: "iDEoANp+UAsBAAAAAAAAAA==",
+    _self: "dbs/iDEoAA==/colls/iDEoANp+UAs=/docs/iDEoANp+UAsBAAAAAAAAAA==/",
+    _etag: '"0d00627f-0000-0100-0000-5d16292c0000"',
+    _attachments: "attachments/",
+    _ts: 1561733420
+  }
+];
+
 
 class App extends Component {
   ageUp = () => {
@@ -43,6 +233,7 @@ class App extends Component {
         </Paper>
         <Users userData={this.props.users} />
         <UserAddForm />
+        <ExpansionPanelDemo apiData={dataArr} />
       </div>
     );
   }
